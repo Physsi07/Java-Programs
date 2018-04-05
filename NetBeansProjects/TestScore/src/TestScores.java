@@ -15,6 +15,7 @@ class TestScores
      
  }
  
+ // Setters //
  public void SetScore1(double num)
  {
   score1 = num;
@@ -32,6 +33,8 @@ class TestScores
   score3 = num;
   
  }
+ 
+ // Getters //
  public double getScore1()
  {
   return score1;
@@ -50,6 +53,7 @@ class TestScores
    
  }
  
+ // Calculation //
  public double getAdverageScore()
  {
   
