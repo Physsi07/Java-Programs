@@ -1,5 +1,5 @@
 import java.util.*;
-public class PigLatinDemo {
+public class PigLatin {
     // MAIN METHOD //
     public static void main(String[] args) {
 	
