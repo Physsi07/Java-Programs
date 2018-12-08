@@ -3,7 +3,7 @@ public class Card {
 	// private fields
 	private Suit suit;
 	private Value value;
-	private boolean isFaceUp;
+	public boolean isFaceUp;
 
 	// constructor
 	public Card(Value value, Suit suit){
@@ -21,6 +21,12 @@ public class Card {
 		return value.getValue();
 	}
 
+	// getting the value as a string of a card
+	public String printValue(){
+		return value.printValue();
+	}
+
+	// flipping the card
 	public void flipCard(){
 		isFaceUp = !isFaceUp;
 	}

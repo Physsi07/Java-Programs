@@ -1,26 +1,36 @@
 public class Game {
 	public static void main(String[] args) {
 
-		Card c1, c2;
-		c1 = new Card(Value.ACE, Suit.HEARTS);
-		c2 = new Card(Value.JACK, Suit.HEARTS);
+		Deck deck = new Deck();
+		deck.populate();
+		deck.shuffle();
 
-		// flip cards
-		c1.flipCard();
-		c2.flipCard();
+		// create our playing hand
+		Hand player1, player2, player3, dealer;
+		player1 = new Hand();
+		player2 = new Hand();
+		player3 = new Hand();
+		dealer = new Hand();
 
-		// create a hand
-		Hand Jose = new Hand();
-		Hand Pedro = new Hand();
+		Hand[] hands = {player1, player2, player3};
 
-		Jose.addCard(c1);
-		Jose.addCard(c2);
+		// Deal cards to our hands
+		deck.deal(hands, 2);
 
-		System.out.printf(Jose.showHand());
+		// Deal 2 cards to dealers
+		deck.deal(dealer, 2);
 
-//		Jose.giveCard(c1, Pedro);
+		// Show the player's hands
+		for(int i = 0; i < hands.length; i++){
+			hands[i].flipCards();
+			System.out.printf(hands[i].showHand() + "\n");
+		}
 
-		System.out.printf("Jose: " + Jose.showHand() +
-				"Pedro: " + Pedro.showHand());
+		// Flip the dealer's first card
+		dealer.cards.get(0).flipCard();
+
+		// Show the dealer's cards
+		System.out.printf("\nDealer's Cards: \n" + dealer.showHand());
+
 	}
 }

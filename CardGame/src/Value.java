@@ -1,6 +1,6 @@
 public enum Value {
 	ACE(1, "Ace"),
-	DEUCE(2, "DEUCE"),
+	DEUCE(2, "TWO"),
 	THREE(3, "THREE"),
 	FOUR(4, "FOUR"),
 	FIVE(5, "FIVE"),
