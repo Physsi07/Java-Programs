@@ -1,3 +1,5 @@
+package com.nsft;
+
 import java.util.Scanner;
 
 public class BankAccount {
@@ -39,55 +41,47 @@ public class BankAccount {
 
 	public void showMenu(){
 		Scanner scanner = new Scanner(System.in);
-		char option = '\0';
-		System.out.printf("Welcome " + clientName);
+		char answer = ' ';
+		System.out.printf("Welcome " + clientName + "\n");
 		System.out.printf("Your ID is " + clientID + "\n");
-		System.out.printf("A. Check Balance");
-		System.out.printf("B. Deposit");
-		System.out.printf("C. Withdraw");
-		System.out.printf("D. Previous Transaction");
-		System.out.printf("E. Exit");
+		System.out.printf("A. Check Balance\n");
+		System.out.printf("B. Deposit\n");
+		System.out.printf("C. Withdraw\n");
+		System.out.printf("D. Previous Transaction\n");
+		System.out.println("E. Exit");
+		System.out.println();
 
 		do{
+			System.out.print("Enter an option: ");
+			answer = scanner.next().charAt(0);
+			char option = Character.toUpperCase(answer);
 
-			System.out.printf("*********************");
-			System.out.printf("Enter an option: ");
-			System.out.printf("*********************\n");
-			option = scanner.next().charAt(0);
 
 			switch (option){
 				case 'A':
-					System.out.printf("*********************");
-					System.out.printf("Balance: " + balance);
-					System.out.printf("*********************\n");
+					System.out.println("Balance: " + balance);
 					break;
 				case 'B':
-					System.out.printf("*********************");
-					System.out.printf("Enter an amount to deposit: ");
-					System.out.printf("*********************\n");
+					System.out.println("Enter an amount to deposit: ");
 					int amountToDeposit = scanner.nextInt();
 					deposit(amountToDeposit);
-					System.out.printf("\n");
+					System.out.println();
 					break;
 				case 'C':
-					System.out.printf("*********************");
-					System.out.printf("Enter an amount to withdraw: ");
-					System.out.printf("*********************\n");
+					System.out.println("Enter an amount to withdraw: ");
 					int amountToWithdraw = scanner.nextInt();
 					withdraw(amountToWithdraw);
-					System.out.printf("\n");
+					System.out.println();
 					break;
 				case 'D':
-					System.out.printf("*********************");
 					getPreviousTransaction();
-					System.out.printf("*********************\n");
-					System.out.printf("\n");
+					System.out.println();
 					break;
 				default:
-					System.out.printf("Invalid Option!!. Please enter again...");
+					System.out.println("Invalid Option!!. Please enter again...");
 			}
 
-		}while (option != 'E');
+		}while (answer != 'E');
 	}
 
 }
